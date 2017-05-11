@@ -1,5 +1,8 @@
-﻿  Main.cpp
-j:\cs172\cs-172_final_project_(olderr_and_macdonald)\cs-172_final_project\main.cpp(25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-j:\cs172\cs-172_final_project_(olderr_and_macdonald)\cs-172_final_project\main.cpp(39): warning C4018: '<': signed/unsigned mismatch
+﻿  Suspect.cpp
+  Main.cpp
+j:\cs172\cs-172_final_project_(olderr_and_macdonald)\cs-172_final_project\main.cpp(50): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+j:\cs172\cs-172_final_project_(olderr_and_macdonald)\cs-172_final_project\main.cpp(64): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+j:\cs172\cs-172_final_project_(olderr_and_macdonald)\cs-172_final_project\suspect.cpp(68): warning C4715: 'Suspect::getAnswer': not all control paths return a value
   CS-172_Final_Project.vcxproj -> J:\CS172\CS-172_Final_Project_(Olderr_and_MacDonald)\Debug\CS-172_Final_Project.exe
   CS-172_Final_Project.vcxproj -> J:\CS172\CS-172_Final_Project_(Olderr_and_MacDonald)\Debug\CS-172_Final_Project.pdb (Full PDB)

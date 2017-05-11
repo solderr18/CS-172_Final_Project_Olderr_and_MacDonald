@@ -10,15 +10,25 @@ using namespace std;
 /*
 TO DO :
 ------------------------
-CREATE MORE SUSPECTS
--in setAnswers() set the t&f answers for q1&2
--put in where lists are printed
-WRITE INTRODUCTION
+=WRITE INTRO
+
+=WRITE QUESTIONS IN
+void setAnswers(vector<Suspect*> &s)
+
+=SET NAMES IN
+void createSuspects(vector<Suspect*> &s)
+Suspect* whichSuspectTalkTo(vector<Suspect*> &s)
+void guess(vector<Suspect*> &s)
+
+
+also,, could add in check for invalid entered type iE if char/string entered instead of int
+			or if double (mainly decimal) is entered
 ------------------------
 check: unsigned int needed infront of choice
 is this because ->size() returns unsigned int?
 run into a lot of problems w/o it...tho not
 rlly a pressing problem
+^^not an issue, program works.
 */
 
 void createSuspects(vector<Suspect*> &s);
@@ -69,6 +79,16 @@ void createSuspects(vector<Suspect*> &s)
 	Suspect* leanne = new Suspect("LeAnne");
 	s.push_back(leanne);
 
+	//THREE BLANK CHARACTORS
+	Suspect* person3 = new Suspect("Person 3");
+	s.push_back(person3);
+
+	Suspect* person4 = new Suspect("Person 4");
+	s.push_back(person4);
+
+	Suspect* person5 = new Suspect("Person 5");
+	s.push_back(person5);
+
 	// TODO create three more suspects (AND PUT THEM IN WHERE LISTS ARE PRINTED)
 }
 
@@ -88,6 +108,29 @@ void setAnswers(vector<Suspect*> &s)
 	s[1]->setInnocentAnswer("I was at my weekly sitar class meeting.");
 	s[1]->setInnocentAnswer("Hey! I knew them! They were in my weekly sitar class! What did you say happened to them?");
 
+
+	//Blank responses for last three blank characters
+	//PERSON 3
+	s[2]->setGuiltyAnswer("Person 3 guilty answer 1");
+	s[2]->setGuiltyAnswer("Person 3 guilty answer 2");
+
+	s[2]->setInnocentAnswer("Person 3 innocent answer 1");
+	s[2]->setInnocentAnswer("Person 3 innocent answer 2");
+
+	//PERSON 4
+	s[3]->setGuiltyAnswer("Person 4 guilty answer 1");
+	s[3]->setGuiltyAnswer("Person 4 guilty answer 2");
+
+	s[3]->setInnocentAnswer("Person 4 innocent answer 1");
+	s[3]->setInnocentAnswer("Person 4 innocent answer 2");
+
+	//PERSON 5
+	s[4]->setGuiltyAnswer("Person 5 guilty answer 1");
+	s[4]->setGuiltyAnswer("Person 5 guilty answer 2");
+
+	s[4]->setInnocentAnswer("Person 5 innocent answer 1");
+	s[4]->setInnocentAnswer("Person 5 innocent answer 2");
+
 	// TODO SET ANSWERS FOR THREE OTHER SUSPECTS!!!
 }
 
@@ -106,7 +149,7 @@ Suspect* whichSuspectTalkTo(vector<Suspect*> &s)
 {
 	unsigned int choice;
 	cout << "Which suspect would you like to talk to? (enter number)\n" << endl;
-	cout << "1. Bob\n2. LeAnne\n";
+	cout << "1. Bob\n2. LeAnne\n3. Person 3\n4. Person 4\n5. Person 5\n";
 	do {
 		cin >> choice;
 		if (choice > s.size() || choice == 0)
@@ -145,7 +188,7 @@ void guess(vector<Suspect*> &s)
 {
 	unsigned int choice; //errors went away when i did this, dont know why
 	cout << "WHO'S THE KILLER?" << endl;
-	cout << "1. Bob\n2.Leanne\n" << endl;
+	cout << "1. Bob\n2. LeAnne\n3. Person 3\n4. Person 4\n5. Person 5\n" << endl;
 	do {
 		cin >> choice;
 		if (choice > s.size() || choice == 0)

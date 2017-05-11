@@ -14,7 +14,7 @@ Suspect::Suspect(string name)
 }
 
 // CONSTRUCTOR FROM A POINTER [MIGHT NOT NEED IT... SEE EXAM 2]
-/*Suspect::Suspect(Suspect* suspect)
+/*Suspect::Suspect(Suspect* suspect) 
 {
 	if (suspect != NULL)
 	{
