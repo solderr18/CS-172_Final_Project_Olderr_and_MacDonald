@@ -9,17 +9,6 @@ using namespace std;
 
 /*
 TO DO :
-------------------------
-=WRITE INTRO
-
-=WRITE QUESTIONS IN
-void setAnswers(vector<Suspect*> &s)
-
-=SET NAMES IN
-void createSuspects(vector<Suspect*> &s)
-Suspect* whichSuspectTalkTo(vector<Suspect*> &s)
-void guess(vector<Suspect*> &s)
-
 
 also,, could add in check for invalid entered type iE if char/string entered instead of int
 			or if double (mainly decimal) is entered
@@ -80,16 +69,15 @@ void createSuspects(vector<Suspect*> &s)
 	s.push_back(leanne);
 
 	//THREE BLANK CHARACTORS
-	Suspect* person3 = new Suspect("Person 3");
-	s.push_back(person3);
+	Suspect* penelope = new Suspect("Penelope");
+	s.push_back(penelope);
 
-	Suspect* person4 = new Suspect("Person 4");
-	s.push_back(person4);
+	Suspect* sam = new Suspect("Sam");
+	s.push_back(sam);
 
-	Suspect* person5 = new Suspect("Person 5");
-	s.push_back(person5);
+	Suspect* jackson = new Suspect("Jackson");
+	s.push_back(jackson);
 
-	// TODO create three more suspects (AND PUT THEM IN WHERE LISTS ARE PRINTED)
 }
 
 void setAnswers(vector<Suspect*> &s)
@@ -109,29 +97,27 @@ void setAnswers(vector<Suspect*> &s)
 	s[1]->setInnocentAnswer("Hey! I knew them! They were in my weekly sitar class! What did you say happened to them?");
 
 
-	//Blank responses for last three blank characters
-	//PERSON 3
-	s[2]->setGuiltyAnswer("Person 3 guilty answer 1");
-	s[2]->setGuiltyAnswer("Person 3 guilty answer 2");
+	//PENELOPE //PAUL
+	s[2]->setGuiltyAnswer("This is weird and unacceptable! Why would you be asking me something like this?? I'm not a killer! I want my lawyer!");
+	s[2]->setGuiltyAnswer("Oh, yeah... Great guy... We, uh, we really got along great..(*clears throat*)");
 
-	s[2]->setInnocentAnswer("Person 3 innocent answer 1");
-	s[2]->setInnocentAnswer("Person 3 innocent answer 2");
+	s[2]->setInnocentAnswer("What time was it? 11:00? I was at a karaoke party at that time... Just ask the fellas over there. (*The 'fellas' confirm her story, and even show you embarrassing footage of her horrendous singing abilities [or lack thereof] with a datestamp on the video clip.*)");
+	s[2]->setInnocentAnswer("As a matter of fact, I don't think I ever met them.");
 
-	//PERSON 4
-	s[3]->setGuiltyAnswer("Person 4 guilty answer 1");
-	s[3]->setGuiltyAnswer("Person 4 guilty answer 2");
+	//SAM //SARAH
+	s[3]->setGuiltyAnswer("Home with my dog... Ask her I was...");
+	s[3]->setGuiltyAnswer("All I'm saying is he really should't've said those things about my mom.");
 
-	s[3]->setInnocentAnswer("Person 4 innocent answer 1");
-	s[3]->setInnocentAnswer("Person 4 innocent answer 2");
+	s[3]->setInnocentAnswer("The in laws had me over for dinner.");
+	s[3]->setInnocentAnswer("We were in the same crocheting class but never really hung out.");
 
-	//PERSON 5
-	s[4]->setGuiltyAnswer("Person 5 guilty answer 1");
-	s[4]->setGuiltyAnswer("Person 5 guilty answer 2");
+	//JACKSON //SARAH
+	s[4]->setGuiltyAnswer("Ok look dude... I killed them. Okay? Happy?");
+	s[4]->setGuiltyAnswer("No offense but they stole my dance moves and I hate them.");
 
-	s[4]->setInnocentAnswer("Person 5 innocent answer 1");
-	s[4]->setInnocentAnswer("Person 5 innocent answer 2");
+	s[4]->setInnocentAnswer("Oh that was on the night of my slam poetry reading! We meet up once a month.");
+	s[4]->setInnocentAnswer("We were in the same dance class!");
 
-	// TODO SET ANSWERS FOR THREE OTHER SUSPECTS!!!
 }
 
 void chooseGuiltyPerson(vector<Suspect*> &s)
@@ -140,16 +126,35 @@ void chooseGuiltyPerson(vector<Suspect*> &s)
 	s[randomIndex]->setGuiltyFlag(true);
 }
 
-void introduction()
+void introduction() //PAUL
 {
-	// TODO write intro
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "Murder! There's been a murder at the Hawkshaw Hotel, the hotel where " << endl;
+	cout << "all the great detectives stay on their vacations! You yourself are a " << endl;
+	cout << "detective, one of the best in the world. The scene of the crime sits " << endl; 
+	cout << "before you - a bloody mess(quite literally). The body is on the floor, " << endl; 
+	cout << " there is broken dishware (a sign of a struggle!) and a number of " << endl; 
+	cout << "rather grotesque kife wounds inflicted on the victim. There is no " << endl; 
+	cout <<"knife to be found, however, so you have no fingerprints to go off." << endl << endl;
+	
+	cout << "There are other tenants at this hotel as well, who are not detectives" << endl; 
+	cout << "but common, everyday folks. One of these five common, everday folks" << endl;
+	cout << "has killed this poor, unfortunate victim, and it is up to you to " << endl; 
+	cout << "deduce, by means of individual interviews with each tenant, who the " << endl; 
+	cout << "killer is." << endl << endl;
+	
+	cout << "You will have two questions you can ask each suspect- time is off the" << endl;
+	cout << "esscence. When you feel you've gathered sufficient information, you " << endl;
+	cout << "can make your accusation. But beware---you can only accuse ONCE, so " << endl;
+	cout << "make it count!" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl << endl;
 }
 
 Suspect* whichSuspectTalkTo(vector<Suspect*> &s) 
 {
 	unsigned int choice;
 	cout << "Which suspect would you like to talk to? (enter number)\n" << endl;
-	cout << "1. Bob\n2. LeAnne\n3. Person 3\n4. Person 4\n5. Person 5\n";
+	cout << "1. Bob\n2. LeAnne\n3. Penelope\n4. Sam\n5. Jackson\n";
 	do {
 		cin >> choice;
 		if (choice > s.size() || choice == 0)
@@ -188,7 +193,7 @@ void guess(vector<Suspect*> &s)
 {
 	unsigned int choice; //errors went away when i did this, dont know why
 	cout << "WHO'S THE KILLER?" << endl;
-	cout << "1. Bob\n2. LeAnne\n3. Person 3\n4. Person 4\n5. Person 5\n" << endl;
+	cout << "1. Bob\n2. LeAnne\n3. Penelope\n4. Sam\n5. Jackson\n" << endl;
 	do {
 		cin >> choice;
 		if (choice > s.size() || choice == 0)
@@ -199,6 +204,6 @@ void guess(vector<Suspect*> &s)
 		cout << "Congratulations! You win! " << s[choice - 1]->getName() << " is the murderer! You win!" << endl;
 
 	if (s[choice - 1]->getGuiltyFlag() == false)
-		cout << "So sorry... " << s[choice - 1]->getName() << " was actually innnocent, and you sent them to jail for no reason." << endl <<
+		cout << "So sorry detective... " << s[choice - 1]->getName() << " was actually innnocent, and you sent them to jail." << endl <<
 		"YOU'RE FIRED!" << endl;
 }
