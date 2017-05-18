@@ -9,9 +9,8 @@ using namespace std;
 
 /*
 TO DO :
-
 also,, could add in check for invalid entered type iE if char/string entered instead of int
-			or if double (mainly decimal) is entered
+or if double (mainly decimal) is entered
 ------------------------
 check: unsigned int needed infront of choice
 is this because ->size() returns unsigned int?
@@ -68,13 +67,15 @@ void createSuspects(vector<Suspect*> &s)
 	Suspect* leanne = new Suspect("LeAnne");
 	s.push_back(leanne);
 
-	//THREE BLANK CHARACTORS
+	// CREATE PENELOPE
 	Suspect* penelope = new Suspect("Penelope");
 	s.push_back(penelope);
 
+	// CREATE SAM
 	Suspect* sam = new Suspect("Sam");
 	s.push_back(sam);
 
+	// "GRAB YOURSELF A SLICE O' RUG, JACKSON!!!"
 	Suspect* jackson = new Suspect("Jackson");
 	s.push_back(jackson);
 
@@ -131,26 +132,26 @@ void introduction() //PAUL
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << "Murder! There's been a murder at the Hawkshaw Hotel, the hotel where " << endl;
 	cout << "all the great detectives stay on their vacations! You yourself are a " << endl;
-	cout << "detective, one of the best in the world. The scene of the crime sits " << endl; 
-	cout << "before you - a bloody mess(quite literally). The body is on the floor, " << endl; 
-	cout << " there is broken dishware (a sign of a struggle!) and a number of " << endl; 
-	cout << "rather grotesque kife wounds inflicted on the victim. There is no " << endl; 
-	cout <<"knife to be found, however, so you have no fingerprints to go off." << endl << endl;
-	
-	cout << "There are other tenants at this hotel as well, who are not detectives" << endl; 
+	cout << "detective, one of the best in the world. The scene of the crime sits " << endl;
+	cout << "before you - a bloody mess(quite literally). The body is on the floor, " << endl;
+	cout << " there is broken dishware (a sign of a struggle!) and a number of " << endl;
+	cout << "rather grotesque knife wounds inflicted on the victim. There is no " << endl;
+	cout << "knife to be found, however, so you have no fingerprints to go off of." << endl << endl;
+
+	cout << "There are other tenants at this hotel as well, who are not detectives" << endl;
 	cout << "but common, everyday folks. One of these five common, everday folks" << endl;
-	cout << "has killed this poor, unfortunate victim, and it is up to you to " << endl; 
-	cout << "deduce, by means of individual interviews with each tenant, who the " << endl; 
+	cout << "has killed this poor, unfortunate victim, and it is up to you to " << endl;
+	cout << "deduce, by means of individual interviews with each tenant, who the " << endl;
 	cout << "killer is." << endl << endl;
-	
-	cout << "You will have two questions you can ask each suspect- time is off the" << endl;
+
+	cout << "You will have two questions you can ask each suspect - time is of the" << endl;
 	cout << "esscence. When you feel you've gathered sufficient information, you " << endl;
 	cout << "can make your accusation. But beware---you can only accuse ONCE, so " << endl;
 	cout << "make it count!" << endl;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << endl << endl;
 }
 
-Suspect* whichSuspectTalkTo(vector<Suspect*> &s) 
+Suspect* whichSuspectTalkTo(vector<Suspect*> &s)
 {
 	unsigned int choice;
 	cout << "Which suspect would you like to talk to? (enter number)\n" << endl;
@@ -176,7 +177,7 @@ int interview(Suspect* interviewee)
 	} while (choice < 1 || choice > 2);
 
 
-	cout << interviewee->getAnswer(choice) << endl << endl;
+	cout << endl << interviewee->getName() << " says: " << interviewee->getAnswer(choice) << endl << endl;
 
 	int cont;
 	cout << "Type 1 if you want to keep interviewing suspects." << endl;
